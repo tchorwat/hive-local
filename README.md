@@ -24,6 +24,13 @@ You can run beeline with embedded server with:
 docker run -it --rm tchorwat/hive-local beeline
 ```
 
+### Starting beeline and connect to external hiveserver2
+
+You can run beeline and connect to external hiveserver2 instance:
+```
+docker run -it --rm tchorwat/hive-local beeline -u jdbc:hive2://host.docker.internal:10000/
+```
+
 ### Custom settings
 
 It is recommended to bind host directory to `/data` container directory, like:
