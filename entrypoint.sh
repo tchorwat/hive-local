@@ -5,8 +5,7 @@ if [ "$1" = 'hiveserver2' ] || [ -z "$1" ]; then
   if [ "$1" = 'hiveserver2' ]; then
     shift 1
   fi
-  /hive/apache-hive-1.2.2-bin/bin/hiveserver2 "$@" &>/dev/null &
-  tail -f /dev/null
+  /hive/apache-hive-1.2.2-bin/bin/hiveserver2 --hiveconf hive.root.logger=INFO,console "$@"
 elif [ "$1" = 'beeline' ]; then
   shift 1;
   defUrl='-u jdbc:hive2://'
